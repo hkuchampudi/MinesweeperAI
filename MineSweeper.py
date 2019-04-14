@@ -42,11 +42,6 @@ class MineSweeperBoard:
     # - 0-9 = Number of adjacent mines to a tile 
     self.gameStateBoard = [[-1 for x in range(self.yDimension)] for y in range(self.xDimension)]
     
-    # Keeps track if a tile on the board has already been selected
-    # - 0 = Non yet been selected
-    # - 1 = Has been selected
-    self.gameStateVisitedBoard = [[0 for x in range(self.yDimension)] for y in range(self.xDimension)]
-    
     # Player gameboard view consists of the following symbols
     # -   @ = Unknown (not yet selected) tile
     # -   x = Mine location
@@ -232,8 +227,7 @@ class MineSweeperBoard:
     """Reveals the tile specified by the input coordinates
 
     This is a helper function that reveals the tile found at
-    coordinates (x, y) in the playerViewBoard. Additionally,
-    it marks the tile as visited in the gameStateVisitedBoard
+    coordinates (x, y) in the playerViewBoard.
 
     Parameters
     ----------
@@ -246,18 +240,15 @@ class MineSweeperBoard:
     # show a mine on the playerViewBoard
     if self.gameStateBoard[x][y] == -9:
       self.playerViewBoard[x][y] = 'x'
-      self.gameStateVisitedBoard[x][y] = 1
     elif self.gameStateBoard[x][y] == 0:
       self.playerViewBoard[x][y] = '-'
-      self.gameStateVisitedBoard[x][y] = 1
       self.movesRemaining -= 1
     else:
       self.playerViewBoard[x][y] = self.gameStateBoard[x][y]
-      self.gameStateVisitedBoard[x][y] = 1
       self.movesRemaining -= 1
 
   def __hasBeenPlayed(self, x, y):
-    """Check the gameStateVisitedBoard to see if a tile has already been played
+    """Check the playerViewBoard to see if a tile has already been played
 
     Parameters
     ----------
@@ -266,7 +257,7 @@ class MineSweeperBoard:
     y : int
       y coordinate of the tile to check
     """
-    return True if self.gameStateVisitedBoard[x][y] == 1 else False
+    return False if self.playerViewBoard[x][y] == '@' else True
 
   def __uncoverAdjTiles(self, x, y):
     """Uncovers tiles adjacent to the coordinates of the tile provided
