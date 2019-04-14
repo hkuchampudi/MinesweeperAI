@@ -28,6 +28,8 @@ class MineSweeperBoard:
     self.mineCoordinates = []
     self.gameOver = False
     self.movesRemaining = (self.xDimension * self.yDimension) - self.numberMines
+    if self.movesRemaining == 0:
+      self.gameOver = True
 
     # Sanity check to make sure that there are not more mines
     # than actual tiles on the game board
