@@ -114,7 +114,7 @@ class MineSweeperBoard:
     """
     board = self.playerViewBoard if (gameboard == None) else gameboard
     print('\n')
-    print('\n'.join(['\t'.join([str(cell) for cell in row]) for row in board]))
+    print('\n'.join([' '.join([str(cell) for cell in row]) for row in board]))
     print('\n')
 
   def printDebug(self):
@@ -382,7 +382,7 @@ if __name__ == "__main__":
     # Create a new instance of the Minesweeper game board
     NewGameboard = MineSweeperBoard(CONST_GAMEBOARD_ROWS, CONST_GAMEBOARD_COLS, CONST_GAMEBOARD_MINES)
     NewGameboard.print()
-    NewGameboard.printDebug()
+    # NewGameboard.printDebug()
     # While the game is not over, the player should keep
     # being prompted for their next move
     while not NewGameboard.isGameOver():
@@ -391,7 +391,7 @@ if __name__ == "__main__":
       try:
         NewGameboard.makeMove(xCoordinate, yCoordinate)
         NewGameboard.print()
-        NewGameboard.printDebug()
+        # NewGameboard.printDebug()
       except ValueError as error:
         print(error)
         print('invalid move selected, please select another tile')
