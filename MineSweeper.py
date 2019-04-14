@@ -364,6 +364,15 @@ class MineSweeperBoard:
         self.gameOver = True
         print('player has won')
 
+  def getPlayerBoard(self):
+    """Returns the 2D playerViewBoard
+
+    This function returns the 2D playerViewBoard array so that
+    it can be passed to the AI player which will then make decisions
+    on the next move to play.
+    """
+    return self.playerViewBoard
+
 # Main application logic
 if __name__ == "__main__":
     # Predefined dimensions for the gameboard (these values can be changed)
