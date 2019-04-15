@@ -170,6 +170,13 @@ class MineSweeperPlayer:
     # Add the list of unique variables to the problem
     uniqueVariablesList = list(uniqueVariables)
     sProblem.addVariables(uniqueVariablesList, [0,1])
+    
+    # Choose a random move if the board is
+    # too sparse
+    if (8 * len(constraintList) == len(uniqueVariablesList)):
+      print('data too spare... choosing random')
+      return 
+    
     solutions = sProblem.getSolutions()
     if len(solutions) != 0:
       for variable in uniqueVariablesList:
