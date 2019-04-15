@@ -16,8 +16,8 @@ Please enter the x component of the tile: 0
 Please enter the y component of the tile: 0
 
 
-- - - 2 @ @ @ @ @
-1 1 1 2 @ @ @ @ @
+- - - 2 X @ @ @ @
+1 1 1 2 X @ @ @ @
 @ @ @ @ @ @ @ @ @
 @ @ @ @ @ @ @ @ @
 @ @ @ @ @ @ @ @ @
@@ -196,10 +196,10 @@ Please enter the x component of the tile: 1
 Please enter the y component of the tile: 5
 
 
-- - - 2 @ @ @ @ @
-1 1 1 2 @ 3 @ @ @
-1 @ 2 2 2 @ @ @ @
-1 1 2 @ 1 1 @ @ @
+- - - 2 M @ @ @ @
+1 1 1 2 M 3 @ @ @
+1 M 2 2 2 @ @ @ @
+1 1 2 M 1 1 @ @ @
 - - 1 1 1 1 1 2 @
 - - - - - - - 2 2
 - - 1 1 1 - - 1 @
@@ -221,3 +221,39 @@ Please enter the y component of the tile: 5
 - - 1 @ 1 - - 1 1
 - - 1 1 1 - - - -
 
+
+
+>>> from constraint import *
+>>> problem = Problem()
+>>> problem.addVariables(["a", "b", "c"], [1,2])
+>>> problem.addConstraint(AllDifferentConstraint())
+>>> problem.getSolutions()
+[]
+>>> problem.
+problem.addConstraint(    problem.getSolution(      problem.getSolver(        
+problem.addVariable(      problem.getSolutionIter(  problem.reset(            
+problem.addVariables(     problem.getSolutions(     problem.setSolver(        
+>>> problem.reset()
+>>> problem.addVariables(['A', 'B', 'C', 'D', 'E', 'F', 'G'], [0, 1])
+>>> problem.addConstraint(ExactSumConstraint(2), ['A', 'B'])
+>>> problem.addConstraint(ExactSumConstraint(2), ['A', 'B', 'C', 'D', 'E'])
+>>> problem.addConstraint(ExactSumConstraint(1), ['D', 'E', 'F'])
+>>> problem.addConstraint(ExactSumConstraint(1), ['E', 'F', 'G'])
+>>> problem.addConstraint(ExactSumConstraint(1), ['F', 'G'])
+>>> problem.getSolutions()
+[{'E': 0, 'F': 1, 'D': 0, 'G': 0, 'A': 1, 'B': 1, 'C': 0}]
+>>> 
+>>> problem.addConstraint(ExactSumConstraint(1), ['Y', 'Z'])
+>>> problem.getSolution()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/harsha/Documents/Artificial Intelligence/FinalProject/constraint/__init__.py", line 228, in getSolution
+    domains, constraints, vconstraints = self._getArgs()
+  File "/home/harsha/Documents/Artificial Intelligence/FinalProject/constraint/__init__.py", line 290, in _getArgs
+    vconstraints[variable].append((constraint, variables))
+KeyError: 'Y'
+>>> problem.addVariables(['Y', 'Z'], [0,1])
+>>> problem.getSolution()
+{'E': 0, 'F': 1, 'D': 0, 'G': 0, 'A': 1, 'B': 1, 'C': 0, 'Y': 1, 'Z': 0}
+>>> problem.getSolutions()
+[{'E': 0, 'F': 1, 'D': 0, 'G': 0, 'A': 1, 'B': 1, 'C': 0, 'Y': 1, 'Z': 0}, {'E': 0, 'F': 1, 'D': 0, 'G': 0, 'A': 1, 'B': 1, 'C': 0, 'Y': 0, 'Z': 1}]
