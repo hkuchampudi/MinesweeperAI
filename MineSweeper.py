@@ -7,9 +7,9 @@ from MineSweeperPlayer import MineSweeperPlayer
 # Main application logic
 if __name__ == "__main__":
     # Predefined dimensions for the gameboard (these values can be changed)
-    CONST_GAMEBOARD_ROWS = 20
-    CONST_GAMEBOARD_COLS = 20
-    CONST_GAMEBOARD_MINES = 21
+    CONST_GAMEBOARD_ROWS = 9
+    CONST_GAMEBOARD_COLS = 9
+    CONST_GAMEBOARD_MINES = 10
     # Create a new instance of the Minesweeper game board
     NewAIPlayer = MineSweeperPlayer(CONST_GAMEBOARD_ROWS, CONST_GAMEBOARD_COLS, CONST_GAMEBOARD_MINES)
     NewGameboard = MineSweeperBoard(CONST_GAMEBOARD_ROWS, CONST_GAMEBOARD_COLS, CONST_GAMEBOARD_MINES)

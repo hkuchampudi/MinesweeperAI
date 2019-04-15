@@ -177,6 +177,10 @@ class MineSweeperPlayer:
   def makeMove(self):
     if len(self.moveQueue) != 0:
       nextMove = self.moveQueue.pop()
+      # Make sure that the move has not already been played.
+      # If it has been, discard it and choose another move
+      if self.playerViewBoard[nextMove[0]][nextMove[1]] != '@':
+        return self.makeMove()
       return nextMove[0], nextMove[1]
     else:
       self.__performCSP()
