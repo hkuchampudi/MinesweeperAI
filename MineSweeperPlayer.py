@@ -19,6 +19,26 @@ class MineSweeperPlayer:
     # - 1-9 = Number of adjacent mines
     self.playerViewBoard = [['@' for x in range(self.yDimension)] for y in range(self.xDimension)]
     self.moveQueue = []
+
+  def print(self, gameboard=None):
+    """Print the player gameboard
+
+    This function prints the players representation of
+    the minesweeper gameboard as a n x m matrix. By 
+    default, the function will print the player's view 
+    of the gameboard; however, if a 2D array is passed-in, 
+    it will print that instead.
+
+    Parameters
+    ----------
+    gameboard : array, optional
+      The 2D array that should be printed if the user does
+      not want to print the player's view.
+    """
+    board = self.playerViewBoard if (gameboard == None) else gameboard
+    print('\n')
+    print('\n'.join([' '.join([str(cell) for cell in row]) for row in board]))
+    print('\n')
   
   def updatePlayerViewBoard(self, playerViewBoard):
     """
