@@ -1,0 +1,223 @@
+[harsha@Laptop FinalProject]$ python MineSweeper.py 
+
+
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 0
+Please enter the y component of the tile: 0
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 2
+Please enter the y component of the tile: 4
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+@ @ @ @ 2 @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 2
+Please enter the y component of the tile: 3
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+@ @ @ 2 2 @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 2
+Please enter the y component of the tile: 2
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+@ @ 2 2 2 @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 2
+Please enter the y component of the tile: 0
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 3
+Please enter the y component of the tile: 0
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+1 @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 3
+Please enter the y component of the tile: 1
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+1 1 @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+@ @ @ @ @ @ @ @ @
+
+
+Please enter the x component of the tile: 4
+Please enter the y component of the tile: 0
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+1 1 2 @ @ @ @ @ @
+- - 1 1 1 1 1 2 @
+- - - - - - - 2 @
+- - 1 1 1 - - 1 @
+- - 1 @ 1 - - 1 1
+- - 1 @ 1 - - - -
+
+
+Please enter the x component of the tile: 8
+Please enter the y component of the tile: 3
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+1 1 2 @ @ @ @ @ @
+- - 1 1 1 1 1 2 @
+- - - - - - - 2 @
+- - 1 1 1 - - 1 @
+- - 1 @ 1 - - 1 1
+- - 1 1 1 - - - -
+
+
+Please enter the x component of the tile: 5
+Please enter the y component of the tile: 8
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+1 1 2 @ @ @ @ @ @
+- - 1 1 1 1 1 2 @
+- - - - - - - 2 2
+- - 1 1 1 - - 1 @
+- - 1 @ 1 - - 1 1
+- - 1 1 1 - - - -
+
+
+Please enter the x component of the tile: 3
+Please enter the y component of the tile: 5
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+1 1 2 @ @ 1 @ @ @
+- - 1 1 1 1 1 2 @
+- - - - - - - 2 2
+- - 1 1 1 - - 1 @
+- - 1 @ 1 - - 1 1
+- - 1 1 1 - - - -
+
+
+Please enter the x component of the tile: 3
+Please enter the y component of the tile: 4
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ @ @ @ @
+1 @ 2 2 2 @ @ @ @
+1 1 2 @ 1 1 @ @ @
+- - 1 1 1 1 1 2 @
+- - - - - - - 2 2
+- - 1 1 1 - - 1 @
+- - 1 @ 1 - - 1 1
+- - 1 1 1 - - - -
+
+
+Please enter the x component of the tile: 1
+Please enter the y component of the tile: 5
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ 3 @ @ @
+1 @ 2 2 2 @ @ @ @
+1 1 2 @ 1 1 @ @ @
+- - 1 1 1 1 1 2 @
+- - - - - - - 2 2
+- - 1 1 1 - - 1 @
+- - 1 @ 1 - - 1 1
+- - 1 1 1 - - - -
+
+
+Please enter the x component of the tile: 2
+Please enter the y component of the tile: 5
+
+
+- - - 2 @ @ @ @ @
+1 1 1 2 @ 3 @ @ @
+1 @ 2 2 2 2 @ @ @
+1 1 2 @ 1 1 @ @ @
+- - 1 1 1 1 1 2 @
+- - - - - - - 2 2
+- - 1 1 1 - - 1 @
+- - 1 @ 1 - - 1 1
+- - 1 1 1 - - - -
+
