@@ -16,6 +16,9 @@ CONST_GAMEBOARD_MINES = CONST_GAMEBOARD_MINES_INTERMEDIATE
 
 ## Notes
 
+### Winning and Losing
+The only time that our AI agent will lose the Minesweeper game is when it is forced to make a random move on the board. A random move will only be made when the AI agent is unable to solve any constraint satisfaction problem.
+
 ### NP-Completeness and Degenerative Cases
 Minesweeper is a [provable NP-complete problem](http://simon.bailey.at/random/kaye.minesweeper.pdf). Therefore, there are some board configurations where our algorithm is degenerative and will hang the computer while it tries to solve the constraint satisfaction problem (CSP); this is especially prevalent on more complex boards like the EXPERT board. If the algorithm stalls for more than 50 seconds, it is probably better to exit the program using `[CTRL-C]` and try running the program again with a different board configuration.
 
