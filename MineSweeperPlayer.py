@@ -5,7 +5,18 @@ from constraint import *
 class MineSweeperPlayer:
 
   def __init__(self, xDimension, yDimension, numberMines):
-    """
+    """Initializes the AI Minesweeper player
+
+    Parameters
+    ----------
+    xDimension : int
+      The number of rows the gameboard possesses
+    yDimension : int
+      The number of columns the gameboard possesses
+    numberMines : int
+      The number of mines that the board contains. The 
+      number should be positive, but less than the total
+      number tiles the board has
     """
     self.xDimension = xDimension
     self.yDimension = yDimension
@@ -20,7 +31,19 @@ class MineSweeperPlayer:
     self.moveQueue = []
 
   def print(self, gameboard=None):
-    """
+    """Print the player's mind gameboard
+
+    This function prints the players mind representation of
+    the minesweeper gameboard as a n x m matrix. By 
+    default, the function will print the player's view 
+    of the gameboard; however, if a 2D array is passed-in, 
+    it will print that instead.
+
+    Parameters
+    ----------
+    gameboard : array, optional
+      The 2D array that should be printed if the user does
+      not want to print the player's view.
     """
     board = self.playerBoard if (gameboard == None) else gameboard
     print('\nPLAYER MIND MAP')
@@ -31,7 +54,16 @@ class MineSweeperPlayer:
     print('\n')
 
   def updatePlayerViewBoard(self, playerBoard):
-    """
+    """ Updates the player's mental board state with the actual board state
+
+    This function updates the player's own tracking of the gameboard
+    with updates to the game board when a move is made.
+
+    Parameters
+    ----------
+    playerBoard: array
+      The 2D array that describes the board state. This is returned by
+      the board class after the player makes a move 
     """
     if self.playerBoard == None:
       self.playerBoard = [row[:] for row in playerBoard]
@@ -42,7 +74,17 @@ class MineSweeperPlayer:
             self.playerBoard[x][y] = playerBoard[x][y]
 
   def __coordinateCheck(self, x, y):
-    """
+    """Checks to make sure that the coordinate pair is within bounds of the board
+
+    This is a helper function that checks to ensure that the input coordinates
+    are within the dimensions of the board.
+
+    Parameters
+    ----------
+    x : int
+      x coordinate of the coordinate pair to check
+    y : int
+      y coordinate of the coordinate pair to check
     """
     if x < 0 or x >= self.xDimension:
       return False
@@ -51,7 +93,12 @@ class MineSweeperPlayer:
     return True
   
   def __chooseRandomMove(self):
-    """
+    """Chooses a random, valid move to make
+
+    In the event that the current board does not produce a
+    consistent answer when solving the satisfiability problems,
+    a random, valid move is chosen instead. This move is added
+    to the player move queue
     """
     randXCoordinate = randint(0, self.xDimension - 1)
     randYCoordinate = randint(0, self.yDimension - 1)
@@ -62,6 +109,18 @@ class MineSweeperPlayer:
       return self.__chooseRandomMove()
 
   def __twoDegreeIsland(self, x, y):
+    """Determines if a tile is a two degree island
+
+    This function determines if a specified tile is surrounded
+    by two degrees of empty tiles.
+
+    Parameters
+    ----------
+    x : int
+      x coordinate of the coordinate pair to check
+    y : int
+      y coordinate of the coordinate pair to check
+    """
     numAdjMines, _ = self.__getNumberAdj(x, y, '*')
     numAdjUnknown, _ = self.__getNumberAdj(x, y, '@')
     numAdj0, _ = self.__getNumberAdj(x, y, '-')
@@ -90,7 +149,14 @@ class MineSweeperPlayer:
       return False
 
   def __formulateConstraintEq(self, x, y):
-    """
+    """Creates a constaint equation for the tile located at (x,y)
+
+    Parameters
+    ----------
+    x : int
+      x coordinate of the coordinate pair to check
+    y : int
+      y coordinate of the coordinate pair to check
     """
     if self.playerBoard[x][y] == '@' or self.playerBoard[x][y] == '-' or self.playerBoard[x][y] == '*':
       return None
@@ -108,7 +174,7 @@ class MineSweeperPlayer:
     return ( (x,y), tileValue, variablesList )
 
   def __getAllConstraints(self):
-    """
+    """Generates a list of constraints for all fringe tiles on the board with adjacent empty spaces
     """
     constraintList = []
     for x, row in enumerate(self.playerBoard):
